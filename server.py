@@ -13,9 +13,9 @@ def generateQR():
     memory=BytesIO()
     data=request.form.get('link')
     img=qrcode.make(data)
-    img=qrcode.make(data)
     img.save(memory)
     memory.seek(0)
+    img.save("hllo.png")
 
     base64_img = "data:image/png;base64," + b64encode(memory.getvalue()).decode('ascii')
     return render_template("qr.html", data=base64_img)

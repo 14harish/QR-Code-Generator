@@ -12,7 +12,15 @@ def Home():
 def generateQR():
     memory=BytesIO()
     data=request.form.get('link')
-    img=qrcode.make(data)
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=10,
+        border=4,
+    )
+    qr.add_data(data)
+    qr.make(fit=True)
+    img = qr.make_image(back_color=(255, 195, 235), fill_color=(55, 95, 35))
     img.save(memory)
     memory.seek(0)
     img.save("hllo.png")

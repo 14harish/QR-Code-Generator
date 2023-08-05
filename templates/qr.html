@@ -4,13 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background:"black"
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <p>Qr code Generator</p>
+    <div class="main">
+    <h1>QRCODE GENERATOR</h1>
+    <div class="formData">
     <form action="/" method="POST">
         <input type="text" name="link"/>
-        <button>Generat</button>
+        <button>GENERAT</button>
     </form>
-    <img src="{{data}}" alt="">
+    </div>
+    <div class="bar"> 
+    <img src="{{data}}" alt="value">
+    </div>
+</div>
 </body>
 </html>
